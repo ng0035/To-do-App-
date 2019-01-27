@@ -1,18 +1,14 @@
 import React, { Component } from 'react';
+import TodoItem from './TodoItem';
 
 class App extends Component {
   render() {
     return (
-      <div>
-
-        <input type = "checkbox"/>
-        <p>Cricket</p>
-        <input type = "checkbox"/>
-        <p>Football</p>        
-        <input type = "checkbox"/>
-        <p>Wrestling</p>
-        <input type = "checkbox"/>
-        <p>Badminton</p>
+      <div className = "to-do-list">
+        <TodoItem/>
+        <TodoItem/>
+        <TodoItem/>
+        <TodoItem/>
       </div>
     );
   }
