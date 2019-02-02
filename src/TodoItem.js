@@ -5,7 +5,7 @@ function TodoItem(props){
         <div className="to-do-item">
             <input type = "checkbox" 
                    checked={props.item.completed} 
-                   onChange = {()=> console.log("changed")}/>
+                   onChange = {()=> props.handleChange(props.item.id) }/>
             <h3>{props.item.text}</h3>
         </div>
     )
