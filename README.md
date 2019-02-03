@@ -18,3 +18,27 @@ To build this to-do app follow these steps:
 3. In the <App/> component, render the to-do list using 3/4 checkboxes using the <input type = "checkbox"/><p>name</p></input>.
 4. Now, create <todoItem/> by moving the checkbox element into a reusable component <TodoItem/>. Now, render the same <TodoItem/> 4 times.
 5. Now pass the object/props to the <TodoItem/> component.
+6. Add state 
+this.state = {
+  todos: []
+  }
+ }
+ render(){
+  const todoItems = this.state.todos.map(
+    item=> <TodoItem key = {item.id} item = {item}/>
+}
+7.<input type = "checkbox" checked = {props.items.completed} onChange = {()=> console.log("changed") }/>
+8. handleChange(id){
+//update state so that the item with the given id flips 'completed' from false to true (or vice versa) and remember not to modify prevState directly, but instead to return a new version of state with the change you want.
+this.setState(prevState => {
+  const updatedTodos = prevState.todos.map(todo => {
+                                           if(todo.id === id){
+                                           todo.completed = !todo.completed
+                                           }
+                                           return todo
+                                           })
+  return {
+         todos : updatedTodos
+         }
+         
+ 9. Styling the completed todos by conditionally changing the style.
